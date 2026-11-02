@@ -1,0 +1,273 @@
+/* =================================================
+   1. CSS RESET & BASE STYLES (Part 2 Rubric)
+   ================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f4f9;
+}
+
+/* =================================================
+   2. HEADER & NAVIGATION STYLING
+   ================================================= */
+header {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 4px solid #ff5722;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #ff5722;
+    margin-top: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #333333;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #ff5722;
+    color: #ffffff;
+    outline: none;
+}
+
+.nav-links a:active {
+    transform: scale(0.95);
+}
+
+/* =================================================
+   3. MAIN CONTENT CONTAINER & TYPOGRAPHY
+   ================================================= */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 2rem 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.main-container h1 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+h2, h3, h4 {
+    color: #222222;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #dddddd;
+    margin: 1.5rem 0;
+}
+
+/* =================================================
+   4. LAYOUT STRUCTURE (Flexbox & CSS Grid)
+   ================================================= */
+.info-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.product-img, .responsive-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ff5722;
+    margin-bottom: 0.5rem;
+}
+
+/* =================================================
+   5. BUTTONS & FORMS STYLING
+   ================================================= */
+.submit-btn {
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e64a19;
+}
+
+.submit-btn:active {
+    background-color: #d84315;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #ff5722;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.3);
+}
+
+/* =================================================
+   6. FOOTER STYLING
+   ================================================= */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin-top: 3rem;
+}
+
+/* =================================================
+   7. RESPONSIVE DESIGN & MEDIA QUERIES
+   ================================================= */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .info-container {
+        flex-direction: column;
+    }
+
+    .main-container {
+        margin: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

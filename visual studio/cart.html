@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkateMonkey - Shopping Cart & Checkout</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Review your selected SkateMonkey decks, gear, or event tickets and complete your purchase securely.">
+    <meta name="keywords" content="SkateMonkey Cart, Checkout, Buy Skate Decks, Event Passes">
+    <!-- Link to External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header>
+        <h1>SkateMonkey</h1>
+        <p>Thrasher Association Agency</p>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-container">
+        <h1>Shopping Cart & Checkout</h1>
+
+        <!-- NAVIGATION LINKS -->
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="ticketSales.html">Tickets</a>
+            <a href="SkateMonkeyProducts.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+        <hr>
+
+        <!-- CART ORDER SUMMARY SECTION -->
+        <section class="about-section cart-summary">
+            <h2>Your Selected Items</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                    <thead>
+                        <tr style="background-color: #1a1a1a; color: #ffffff; text-align: left;">
+                            <th style="padding: 0.75rem;">Item</th>
+                            <th style="padding: 0.75rem;">Price</th>
+                            <th style="padding: 0.75rem;">Quantity</th>
+                            <th style="padding: 0.75rem;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 0.75rem;">SkateMonkey Pro Deck</td>
+                            <td style="padding: 0.75rem;">R 850.00</td>
+                            <td style="padding: 0.75rem;">1</td>
+                            <td style="padding: 0.75rem;">R 850.00</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 0.75rem;">Summer Skate Jam Pass</td>
+                            <td style="padding: 0.75rem;">R 150.00</td>
+                            <td style="padding: 0.75rem;">2</td>
+                            <td style="padding: 0.75rem;">R 300.00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="font-weight: bold; background-color: #fafafa;">
+                            <td colspan="3" style="padding: 0.75rem; text-align: right;">Grand Total:</td>
+                            <td style="padding: 0.75rem; color: #ff5722;">R 1,150.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- CHECKOUT FORM SECTION -->
+        <section class="about-section">
+            <h2>Complete Your Purchase</h2>
+            <form id="checkout-form" class="contact-form" action="#" method="post">
+                <!-- Customer Details -->
+                <h3>1. Personal Details</h3>
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required>
+                </div>
+
+                <!-- Shipping / Delivery Address -->
+                <h3>2. Shipping Address</h3>
+                <div class="form-group">
+                    <label for="address">Street Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your street address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="e.g. Johannesburg" required>
+                </div>
+
+                <!-- Payment Method -->
+                <h3>3. Payment Option</h3>
+                <div class="form-group">
+                    <label for="payment-method">Select Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="">-- Select Payment --</option>
+                        <option value="credit-card">Credit / Debit Card</option>
+                        <option value="eft">Instant EFT</option>
+                        <option value="cash-on-delivery">Pay on Collection</option>
+                    </select>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button type="submit" class="submit-btn" style="font-size: 1.1rem; padding: 1rem;">Complete Order</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <hr>
+        <p>&copy; 2026 SkateMonkey. All rights reserved.</p>
+    </footer>
+
+    <!-- EMBEDDED JAVASCRIPT FOR CHECKOUT PROCESSING -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const checkoutForm = document.getElementById("checkout-form");
+
+            if (checkoutForm) {
+                checkoutForm.addEventListener("submit", function (e) {
+                    e.preventDefault(); // Prevent page refresh
+
+                    const fullName = document.getElementById("full-name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+
+                    if (!fullName || !email) {
+                        alert("Please fill in all required fields before completing your order.");
+                        return;
+                    }
+
+                    // Target or create success confirmation display box
+                    let confirmationBox = document.getElementById("order-confirmation-msg");
+                    if (!confirmationBox) {
+                        confirmationBox = document.createElement("div");
+                        confirmationBox.id = "order-confirmation-msg";
+                        confirmationBox.style.marginTop = "1.5rem";
+                        confirmationBox.style.padding = "1.5rem";
+                        confirmationBox.style.backgroundColor = "#e8f5e9";
+                        confirmationBox.style.color = "#2e7d32";
+                        confirmationBox.style.border = "2px solid #4caf50";
+                        confirmationBox.style.borderRadius = "8px";
+                        confirmationBox.style.fontWeight = "bold";
+                        confirmationBox.style.fontSize = "1.2rem";
+                        confirmationBox.style.textAlign = "center";
+                        checkoutForm.appendChild(confirmationBox);
+                    }
+
+                    // Set the thank you message
+                    confirmationBox.textContent = `Thank you for your purchase, ${fullName}! Your order has been placed successfully. A confirmation has been sent to ${email}.`;
+
+                    // Scroll down smoothly to show confirmation message
+                    confirmationBox.scrollIntoView({ behavior: "smooth" });
+
+                    // Optional: Reset cart and form after a delay
+                    setTimeout(() => {
+                        checkoutForm.reset();
+                        const cartSummary = document.querySelector(".cart-summary");
+                        if (cartSummary) {
+                            cartSummary.innerHTML = "<h3>Your Cart</h3><p style='text-align:center; padding: 2rem;'>Your cart is currently empty.</p>";
+                        }
+                    }, 4000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
